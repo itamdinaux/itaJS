@@ -1,5 +1,16 @@
----
+# Fichier .cpanel.yml
+# Placé à la racine de votre dépôt Git
+
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/sc2oamv8411/itajs.sc2oamv8411.universe.wf/www/
-    - /bin/cp index.html $DEPLOYPATH
+    # 1. Installer les dépendances (si elles ont changé)
+    - export DEPLOYPATH=/home/sc2oamv8411/.gatsby-source
+    - /usr/bin/env npm install --prefix $DEPLOYPATH
+
+    # 2. Exécuter la commande de build de Gatsby
+    # Note: On suppose que 'npm run build' exécute 'gatsby build'
+    - /usr/bin/env npm run build --prefix $DEPLOYPATH
+
+    # 3. Déplacer les fichiers construits (le dossier 'public') vers la racine web
+    # Assurez-vous que /public_html est bien le répertoire que votre site sert
+    - rsync -av --delete $DEPLOYPATH/public/ /home/sc2oamv8411/itajs.sc2oamv8411.universe.wf/www/
