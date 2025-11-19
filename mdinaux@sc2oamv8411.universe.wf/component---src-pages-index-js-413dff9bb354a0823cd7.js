@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkita_js=self.webpackChunkita_js||[]).push([[293],{639:function(e,t,a){a.r(t);var l=a(159);t.default=()=>l.createElement("div",null,l.createElement("h1",null,"ItaJS site"))}}]);
+//# sourceMappingURL=component---src-pages-index-js-413dff9bb354a0823cd7.js.map

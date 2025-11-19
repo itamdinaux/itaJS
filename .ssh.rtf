@@ -1,0 +1,17 @@
+scp -r '/Users/maximedinaux/Serveur/itaJS/public/.' sc2oamv8411@sc2oamv8411.universe.wf:itajs.sc2oamv8411.universe.wf/tmp
+
+
+ssh sc2oamv8411@sc2oamv8411.universe.wf
+cd itajs.sc2oamv8411.universe.wf
+//delete
+rm -rf www
+//rename
+mv tmp www
+
+exit 
+
+// http://itajs.sc2oamv8411.universe.wf/
+
+
+//Enter to the virtual environment.To enter to virtual environment, run the command: 
+source /home/sc2oamv8411/nodevenv/.gatsby-source/18/bin/activate && cd /home/sc2oamv8411/.gatsby-source

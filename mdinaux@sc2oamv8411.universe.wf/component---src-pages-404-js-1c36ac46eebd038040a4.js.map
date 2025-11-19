@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-pages-404-js-1c36ac46eebd038040a4.js","mappings":"wHAMA,UAJc,IACL,2BAAK,Q","sources":["webpack://ita-js/./src/pages/404.js"],"sourcesContent":["import React from 'react'\n\nconst Error = () => {\n  return <div>Error</div>\n}\n\nexport default Error\n"],"names":[],"sourceRoot":""}
