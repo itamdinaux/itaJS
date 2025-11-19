@@ -4,7 +4,8 @@ const Index = () => {
   return (
     <div>
       <h1>ItaJS site</h1>
-      <p>deploiement?</p>
+      <h2>deploiement?</h2>
+      <p>version 2</p>
     </div>
   )
 }
