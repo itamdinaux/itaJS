@@ -1,16 +1,29 @@
-# Fichier .cpanel.yml
-# Placé à la racine de votre dépôt Git
+---
+# .cpanel.yml
+# Ce fichier définit les étapes de déploiement pour votre projet Gatsby sur cPanel.
 
 deployment:
   tasks:
-    # 1. Installer les dépendances (si elles ont changé)
-    - export DEPLOYPATH=/home/sc2oamv8411/.gatsby-source
-    - ../nodevenv/.gatsby-source/18/bin npm install --prefix $DEPLOYPATH
+    - export DEPLOYPATH=/home/sc2oamv8411/itajs.sc2oamv8411.universe.wf/www
 
-    # 2. Exécuter la commande de build de Gatsby
-    # Note: On suppose que 'npm run build' exécute 'gatsby build'
-    - ../nodevenv/.gatsby-source/18/bin npm run build --prefix $DEPLOYPATH
+    # 1. Préparation de l'environnement
+    # Assurez-vous d'utiliser la bonne version de Node.js si nécessaire (via l'outil cPanel "Setup Node.js App").
 
-    # 3. Déplacer les fichiers construits (le dossier 'public') vers la racine web
-    # Assurez-vous que /public_html est bien le répertoire que votre site sert
-    - rsync -av --delete $DEPLOYPATH/public/ /home/sc2oamv8411/itajs.sc2oamv8411.universe.wf/www/
+    # 2. Installation des dépendances (node_modules)
+    - echo "Installation des dépendances npm..."
+    - /usr/bin/npm install
+
+    # 3. Construction du site statique (gatsby build)
+    # Ceci exécute la commande 'gatsby build' spécifiée dans votre package.json.
+    - echo "Construction du site Gatsby..."
+    - /usr/bin/npm run build
+
+    # 4. Déploiement des fichiers générés
+    # Le répertoire 'public' est celui généré par 'gatsby build'.
+    # Nous copions son contenu vers le répertoire public de votre site.
+    - echo "Déploiement du contenu du dossier /public..."
+    - /usr/bin/rsync -av --exclude node_modules ./public/ $DEPLOYPATH
+
+    # Nettoyage optionnel des anciennes versions du site (si nécessaire)
+    # - echo "Nettoyage du répertoire temporaire..."
+    # - rm -rf ./public
