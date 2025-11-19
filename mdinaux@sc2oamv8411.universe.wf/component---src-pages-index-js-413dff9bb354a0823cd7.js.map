@@ -1,1 +1,0 @@
-{"version":3,"file":"component---src-pages-index-js-413dff9bb354a0823cd7.js","mappings":"wHAUA,UARc,IAEV,2BACE,0BAAI,c","sources":["webpack://ita-js/./src/pages/index.js"],"sourcesContent":["import React from 'react'\n\nconst Index = () => {\n  return (\n    <div>\n      <h1>ItaJS site</h1>\n    </div>\n  )\n}\n\nexport default Index\n"],"names":[],"sourceRoot":""}
