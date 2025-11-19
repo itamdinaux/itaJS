@@ -5,11 +5,11 @@ deployment:
   tasks:
     # 1. Installer les dépendances (si elles ont changé)
     - export DEPLOYPATH=/home/sc2oamv8411/.gatsby-source
-    - /nodevenv/.gatsby-source/18/bin npm install --prefix $DEPLOYPATH
+    - ../nodevenv/.gatsby-source/18/bin npm install --prefix $DEPLOYPATH
 
     # 2. Exécuter la commande de build de Gatsby
     # Note: On suppose que 'npm run build' exécute 'gatsby build'
-    - /nodevenv/.gatsby-source/18/bin npm run build --prefix $DEPLOYPATH
+    - ../nodevenv/.gatsby-source/18/bin npm run build --prefix $DEPLOYPATH
 
     # 3. Déplacer les fichiers construits (le dossier 'public') vers la racine web
     # Assurez-vous que /public_html est bien le répertoire que votre site sert
