@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/sc2oamv8411/itajs.sc2oamv8411.universe.wf/www/
+    - /bin/cp index.html $DEPLOYPATH
