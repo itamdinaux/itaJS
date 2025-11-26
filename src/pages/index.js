@@ -5,7 +5,7 @@ const Index = () => {
     <div>
       <h1>ItaJS site</h1>
       <h2>deploiement?</h2>
-      <p>version 31</p>
+      <p>version 32</p>
     </div>
   )
 }
